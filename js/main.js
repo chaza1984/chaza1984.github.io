@@ -117,15 +117,15 @@ function registrarSW(){
 //in devuelve tru si service esta dentro de navigator. Sirve para verificar si el navegador lo soporta.
 //2) Registrar dicho worker en el archivo JS principal
 
-if('serviceWorker' in navigator)
+if('serviceWorker' in navigator){
 navigator.serviceWorker.register('../servicesWorker.js') //ruta relativa donde esta el archivo js
 .then(registracion => {
 console.log("SW registrado correctamente", registracion)
-registracion.
+
 })
 .catch(error=>console.log(error))
 }
-
+}
 
 
 
