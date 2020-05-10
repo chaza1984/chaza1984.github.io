@@ -1,0 +1,73 @@
+
+
+HAcer el sitio instalable
+
+que significa que sitio se instale?
+que se instala? =>assets
+como? =>mediante un copiado
+Donde? =>en el cache del browser
+
+Archivos que se procesan del lado del Cliente (html, js, css) => React js
+-Archivos que procesa el browser=> assets => .js resultante
+-Archivos que sirven para generar los primeros ==>componentes, modulos, funciones de react JS
+
+
+Archivos que se procesan del lado del servidor =>php, jsp, aspx
+
+
+
+1) Indicarle al browser que este sitio es un sitio instalable => MANIFEST.JSON
+2)programar el codigo .js necesario para que esa instalacion ocurra => API ServiceWorker
+
+
+app-manifest.firebaseapp.com
+genera el manifest y genera disitntas versiones del icono
+en index hay que linkear en header el manifest.json
+
+https://www.iconfinder.com/
+
+la seccion de chrome aplication nos da info de la awp
+
+
+----------------------------
+
+ServiceWorker
+
+El serviceworker es un PROXY de red
+
+get https://sledesma.github.io                     sw        index.html(desde el servidor)
+get https://sledesma.github.io/estilo.css          sw        estilo.css (desde el servidor)
+get https://sledesma.github.io/main.js             sw         main.js (desde el servidor)
+
+
+
+El serviceWorker (es una capa) sirve para interceptar las peticiones HTTP antes de que salgan al servidor.
+-antes de que se necesite internet para procesarlas.
+- es una API de javascript
+-se utiliza mayoritariamente para  hacer awp
+
+con el worker Se procesa en hilos paralelos (como si fuera un asincronismo)
+
+
+
+WORKER
+
+1) Crear un archivo que contiene el codigo del Worker
+2) Registrar dicho worker en el archivo JS principal
+
+
+SERVICEWORKER (dentro de worker esta la api de serviceworker)
+crear serviceworker.js
+
+1) Crear el archivo que contiene los eventos del ServiceWorker
+-install         =>   Se ejecuta por Primera y Unica vez cuando el SW no estuvo presente antes.
+-Active (update) =>   Se ejecuta CUANDO EL SERVICEWORKER CAMBIA SU CODIGO. (cuando hay alguna nueva version de algo)
+-Fetch           =>   Se ejecuta POR CADA PETICION HTTP recibida a este dominio
+
+2)Registrar dicho serviceWorker en el archivo JS principal
+
+
+
+
+
+EL archivo serviceWorker siempre va en la carpeta principal para que su "scope alcance todos los archivos y los fetchee"
