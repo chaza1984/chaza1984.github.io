@@ -118,7 +118,7 @@ function registrarSW(){
 //2) Registrar dicho worker en el archivo JS principal
 
 if('serviceWorker' in navigator){
-navigator.serviceWorker.register('../servicesWorker.js') //ruta relativa donde esta el archivo js
+navigator.serviceWorker.register('../serviceWorker.js') //ruta relativa donde esta el archivo js
 .then(registracion => {
 console.log("SW registrado correctamente", registracion)
 
