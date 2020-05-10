@@ -123,7 +123,7 @@ navigator.serviceWorker.register('../servicesWorker.js') //ruta relativa donde e
 console.log("SW registrado correctamente", registracion)
 registracion.
 })
-.catch(error=>console.log(errir))
+.catch(error=>console.log(error))
 }
 
 
